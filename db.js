@@ -1,9 +1,14 @@
 const mongoose = require('mongoose');
-
-const db = mongoose.connect('mongodb://localhost:27017/mongo-seeder', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
-
-module.exports = db;
-
+const connectDB = async () => {
+    try {
+        await mongoose.connect('mongodb://localhost:27017/auctionDB', {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        console.log('MongoDB Connected...');
+    } catch (err) {
+        console.error(err.message);
+        process.exit(1);
+    }
+};
+module.exports = connectDB;
