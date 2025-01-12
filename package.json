@@ -1,0 +1,16 @@
+{
+  "name": "mongo-seeder",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "CLI tool for seeding MongoDB with auction data and API for searching items",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seed.js seed",
+    "delete": "node seed.js delete"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3"
+  }
+}
